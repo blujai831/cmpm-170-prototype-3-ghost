@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5717067289546495622}
   - component: {fileID: 541773490829555200}
   - component: {fileID: 6280712919983418508}
+  - component: {fileID: 7596615369360299378}
+  - component: {fileID: 8031991339363220309}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -158,3 +160,144 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &7596615369360299378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706121079368337447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a8070d4b7c7d579a647c160734de5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animations:
+  - Name: stand
+    Direction: 0
+    Frames:
+    - Sprite: {fileID: 21300000, guid: 6f099f148d5650993ab78bebec3cfce6, type: 3}
+      FlipX: 0
+      FlipY: 0
+      DurationInGameFrames: 0
+    LoopBackTo: 0
+  - Name: stand
+    Direction: 1
+    Frames:
+    - Sprite: {fileID: 21300000, guid: 6a2afa258e76e64819df88de449cb593, type: 3}
+      FlipX: 0
+      FlipY: 0
+      DurationInGameFrames: 0
+    LoopBackTo: 0
+  - Name: stand
+    Direction: 2
+    Frames:
+    - Sprite: {fileID: 21300000, guid: 2fbbfcdccf2a098679855b708fee8b83, type: 3}
+      FlipX: 1
+      FlipY: 0
+      DurationInGameFrames: 0
+    LoopBackTo: 0
+  - Name: stand
+    Direction: 3
+    Frames:
+    - Sprite: {fileID: 21300000, guid: 2fbbfcdccf2a098679855b708fee8b83, type: 3}
+      FlipX: 0
+      FlipY: 0
+      DurationInGameFrames: 0
+    LoopBackTo: 0
+  - Name: walk
+    Direction: 0
+    Frames:
+    - Sprite: {fileID: 21300000, guid: 6f099f148d5650993ab78bebec3cfce6, type: 3}
+      FlipX: 0
+      FlipY: 0
+      DurationInGameFrames: 15
+    - Sprite: {fileID: 21300000, guid: 1c09c33ebd205a15fa80bbc250f6a7c3, type: 3}
+      FlipX: 0
+      FlipY: 0
+      DurationInGameFrames: 15
+    - Sprite: {fileID: 21300000, guid: 6f099f148d5650993ab78bebec3cfce6, type: 3}
+      FlipX: 0
+      FlipY: 0
+      DurationInGameFrames: 15
+    - Sprite: {fileID: 21300000, guid: 1c09c33ebd205a15fa80bbc250f6a7c3, type: 3}
+      FlipX: 1
+      FlipY: 0
+      DurationInGameFrames: 15
+    LoopBackTo: 0
+  - Name: walk
+    Direction: 1
+    Frames:
+    - Sprite: {fileID: 21300000, guid: 6a2afa258e76e64819df88de449cb593, type: 3}
+      FlipX: 0
+      FlipY: 0
+      DurationInGameFrames: 15
+    - Sprite: {fileID: 21300000, guid: b56eec61d429861e48d94ab4d1c625ca, type: 3}
+      FlipX: 0
+      FlipY: 0
+      DurationInGameFrames: 15
+    - Sprite: {fileID: 21300000, guid: 6a2afa258e76e64819df88de449cb593, type: 3}
+      FlipX: 0
+      FlipY: 0
+      DurationInGameFrames: 15
+    - Sprite: {fileID: 21300000, guid: b56eec61d429861e48d94ab4d1c625ca, type: 3}
+      FlipX: 1
+      FlipY: 0
+      DurationInGameFrames: 15
+    LoopBackTo: 0
+  - Name: walk
+    Direction: 2
+    Frames:
+    - Sprite: {fileID: 21300000, guid: 2fbbfcdccf2a098679855b708fee8b83, type: 3}
+      FlipX: 1
+      FlipY: 0
+      DurationInGameFrames: 15
+    - Sprite: {fileID: 21300000, guid: 632d8188b860275629b9ea8c1936e973, type: 3}
+      FlipX: 1
+      FlipY: 0
+      DurationInGameFrames: 15
+    - Sprite: {fileID: 21300000, guid: 2fbbfcdccf2a098679855b708fee8b83, type: 3}
+      FlipX: 1
+      FlipY: 0
+      DurationInGameFrames: 15
+    - Sprite: {fileID: 21300000, guid: 63e895978c99aec8c87f22032789464f, type: 3}
+      FlipX: 1
+      FlipY: 0
+      DurationInGameFrames: 15
+    LoopBackTo: 0
+  - Name: walk
+    Direction: 3
+    Frames:
+    - Sprite: {fileID: 21300000, guid: 2fbbfcdccf2a098679855b708fee8b83, type: 3}
+      FlipX: 0
+      FlipY: 0
+      DurationInGameFrames: 15
+    - Sprite: {fileID: 21300000, guid: 632d8188b860275629b9ea8c1936e973, type: 3}
+      FlipX: 0
+      FlipY: 0
+      DurationInGameFrames: 15
+    - Sprite: {fileID: 21300000, guid: 2fbbfcdccf2a098679855b708fee8b83, type: 3}
+      FlipX: 0
+      FlipY: 0
+      DurationInGameFrames: 15
+    - Sprite: {fileID: 21300000, guid: 63e895978c99aec8c87f22032789464f, type: 3}
+      FlipX: 0
+      FlipY: 0
+      DurationInGameFrames: 15
+    LoopBackTo: 0
+  _initialAnimation: stand
+  _initialDirection: 1
+--- !u!114 &8031991339363220309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706121079368337447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f039d0db2cf6a35a9c65daaef028b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WalkSpeed: 18
+  Deceleration: 12

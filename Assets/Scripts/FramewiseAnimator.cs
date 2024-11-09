@@ -89,8 +89,8 @@ public class FramewiseAnimator : MonoBehaviour
             if (_currentAnimation == null) {
                 throw new ArgumentException(
                     "Object has no animation " +
-                    $"with name ${name} " +
-                    $"and direction ${direction}"
+                    $"with name {animation} " +
+                    $"and direction {direction}"
                 );
             }
         }

@@ -60,7 +60,9 @@ public class GridConstrainedMotion2D : MonoBehaviour
 
     public void Move(Direction2D direction) {
         if (Moving()) {
-            if (_currentMove != direction) {
+            if (_currentMove == direction) {
+                _anyMoveQueued = false;
+            } else {
                 _anyMoveQueued = true;
                 _queuedMove = direction;
             }

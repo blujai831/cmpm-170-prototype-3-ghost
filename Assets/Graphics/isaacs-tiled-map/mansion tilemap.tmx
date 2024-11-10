@@ -4000,6 +4000,16 @@
     <object id="1" x="0" y="3" width="16" height="13"/>
    </objectgroup>
   </tile>
+  <tile id="16">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="3" y="0" width="9" height="15"/>
+   </objectgroup>
+  </tile>
+  <tile id="17">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="3" y="3" width="9" height="12"/>
+   </objectgroup>
+  </tile>
   <tile id="27">
    <objectgroup draworder="index" id="2">
     <object id="1" x="0" y="0" width="16" height="16"/>

@@ -21,7 +21,7 @@ public class PlayerCharacterController : MonoBehaviour
         _mover = GetComponent<GridConstrainedMotion2D>();
         _animator = GetComponent<FramewiseAnimator>();
         _moveAction = InputSystem.actions.FindAction("move");
-        _powerupTimer = -1;
+        _powerupTimer = 0;
     }
 
     // Update is called once per frame
@@ -30,6 +30,7 @@ public class PlayerCharacterController : MonoBehaviour
         ProcessMoveInput();
         UpdateAnimation();
         UpdateFlashlightAngle();
+        UpdatePowerupState();
     }
 
     private void ProcessMoveInput() {
@@ -86,5 +87,19 @@ public class PlayerCharacterController : MonoBehaviour
             targetQ,
             Time.deltaTime*_flashlightTurnSpeed
         );
+    }
+
+    private void UpdatePowerupState() {
+        if (_powerupTimer > 0) {
+            _powerupTimer--;
+        }
+    }
+
+    public bool HasPowerup() {
+        return _powerupTimer > 0;
+    }
+
+    public void GivePowerup(int duration) {
+        _powerupTimer += duration;
     }
 }

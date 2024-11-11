@@ -137,7 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 439452252}
   - component: {fileID: 439452253}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -371,7 +371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 557503260}
   - component: {fileID: 557503261}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 575488551}
   - component: {fileID: 575488552}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 757187104}
   - component: {fileID: 757187105}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 761366841}
   - component: {fileID: 761366842}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,7 +699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 784271078}
   - component: {fileID: 784271079}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -781,7 +781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 810161844}
   - component: {fileID: 810161845}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -993,7 +993,7 @@ GameObject:
   m_Component:
   - component: {fileID: 836796795}
   - component: {fileID: 836796796}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1157,7 +1157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 854941737}
   - component: {fileID: 854941738}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1239,7 +1239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 888684399}
   - component: {fileID: 888684400}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1321,7 +1321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 893339561}
   - component: {fileID: 893339562}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1403,7 +1403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 945266552}
   - component: {fileID: 945266553}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1485,7 +1485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1008494359}
   - component: {fileID: 1008494360}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1567,7 +1567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1016010531}
   - component: {fileID: 1016010532}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1649,7 +1649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1058610494}
   - component: {fileID: 1058610495}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1731,7 +1731,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1065714808}
   - component: {fileID: 1065714809}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1813,7 +1813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1090093839}
   - component: {fileID: 1090093840}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1895,7 +1895,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1155194226}
   - component: {fileID: 1155194227}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1977,7 +1977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1241078931}
   - component: {fileID: 1241078932}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2059,7 +2059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1246313964}
   - component: {fileID: 1246313965}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2141,7 +2141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1246394330}
   - component: {fileID: 1246394331}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2223,7 +2223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1339069254}
   - component: {fileID: 1339069255}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2305,7 +2305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1367341673}
   - component: {fileID: 1367341674}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2387,7 +2387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1370517732}
   - component: {fileID: 1370517733}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2469,7 +2469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1384529404}
   - component: {fileID: 1384529405}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2551,7 +2551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1393960712}
   - component: {fileID: 1393960713}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2633,7 +2633,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1405879101}
   - component: {fileID: 1405879102}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2715,7 +2715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1436082566}
   - component: {fileID: 1436082567}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2797,7 +2797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1486644627}
   - component: {fileID: 1486644628}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2877,9 +2877,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9193590405886652199, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8602780819986109756, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -7580370322946136999, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
       propertyPath: m_Name
       value: mansion tilemap
+      objectReference: {fileID: 0}
+    - target: {fileID: -7580370322946136999, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -7440578074996849224, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
       propertyPath: m_LocalScale.x
@@ -2933,9 +2945,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6501281963609338442, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -6343208732640745299, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5917644543503778914, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -5045322850629447858, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
       propertyPath: m_SortingOrder
@@ -2945,10 +2965,34 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: -4811317366422334663, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4804802429600342586, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1576942740266217354, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1321306747072956803, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -117194337235815684, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: -27115444005200503, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 544497330148972439, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 877053695676293901, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2957,14 +3001,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 3498782747341419767, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3719481257212478349, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 5479072909400872711, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6724435555340187454, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 8957736276362368603, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9067971027836487043, guid: 20109aa2769ddaa6480c116d59d5d38f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3098,7 +3154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1592468700}
   - component: {fileID: 1592468701}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3180,7 +3236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1627283527}
   - component: {fileID: 1627283528}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3262,7 +3318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1675345880}
   - component: {fileID: 1675345881}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3344,7 +3400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1721595515}
   - component: {fileID: 1721595516}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3426,7 +3482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1767108113}
   - component: {fileID: 1767108114}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3513,7 +3569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1775972232}
   - component: {fileID: 1775972233}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3710,7 +3766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1837961142}
   - component: {fileID: 1837961143}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3797,7 +3853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1956329446}
   - component: {fileID: 1956329447}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3879,7 +3935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2125300458}
   - component: {fileID: 2125300459}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

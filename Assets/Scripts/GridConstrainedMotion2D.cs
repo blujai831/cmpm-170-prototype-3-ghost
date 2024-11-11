@@ -107,7 +107,8 @@ public class GridConstrainedMotion2D : MonoBehaviour
             new Vector2(_grid.cellSize.x*0.9f, _grid.cellSize.y*0.9f),
             0.0f,
             direction.ToVector2(),
-            Vector3.Distance(fromWhere, toWhere)
+            Vector3.Distance(fromWhere, toWhere),
+            LayerMask.GetMask("Map")
         );
         foreach (var castResult in castResults) {
             if (!castResult.collider.isTrigger) {

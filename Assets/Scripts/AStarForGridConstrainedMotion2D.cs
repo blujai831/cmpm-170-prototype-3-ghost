@@ -99,7 +99,10 @@ public class AStarForGridConstrainedMotion2D : MonoBehaviour
                 }
             }
         }
-        return null;
+        foreach (var suboptimalCandidate in fScore) {
+            openSet.Add(suboptimalCandidate.Key);
+        }
+        return ReconstructPath(cameFrom, openSet.Min);
     }
 
     private List<Direction2D> VecPathToDirPath(List<Vector2Int> path) {

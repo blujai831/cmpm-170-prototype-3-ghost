@@ -57,6 +57,7 @@ public class AStarForGridConstrainedMotion2D : MonoBehaviour
             foreach (var marker in _debugMarkersSpawned) {
                 Destroy(marker);
             }
+            _debugMarkersSpawned.Clear();
         }
         if (!_mover.Moving() && _assignedPath.Count > 0) {
             if (_mover.TryMove(_assignedPath[0])) {

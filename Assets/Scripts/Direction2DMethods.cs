@@ -47,4 +47,22 @@ public static class Direction2DMethods
             default: return Vector2.zero;
         }
     }
+    public static Direction2D ToDirection2D(this Vector2 vec) {
+        var upness = Vector2.Dot(vec, Vector2.up);
+        var downness = Vector2.Dot(vec, Vector2.down);
+        var leftness = Vector2.Dot(vec, Vector2.left);
+        var rightness = Vector2.Dot(vec, Vector2.right);
+        if (upness >= downness && upness >= leftness && upness >= rightness) {
+            return Direction2D.Up;
+        } else if (downness >= upness && downness >= leftness && downness >= rightness) {
+            return Direction2D.Down;
+        } else if (leftness >= upness && leftness >= downness && leftness >= rightness) {
+            return Direction2D.Left;
+        } else {
+            return Direction2D.Right;
+        }
+    }
+    public static Direction2D ToDirection2D(this Vector2Int vec) {
+        return ((Vector2) vec).ToDirection2D();
+    }
 }

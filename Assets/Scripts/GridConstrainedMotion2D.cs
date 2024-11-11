@@ -94,17 +94,17 @@ public class GridConstrainedMotion2D : MonoBehaviour
         }
     }
 
-    public bool CanMove(Direction2D direction) {
-        var toWhichCell = _targetGridPosition + direction.ToVector2Int();
+    public bool CanMoveFrom(Vector2Int fromWhichCell, Direction2D direction) {
+        var toWhichCell = fromWhichCell + direction.ToVector2Int();
         var fromWhere = _grid.GetCellCenterWorld(
-            new Vector3Int(_gridPosition.x, _gridPosition.y, 0)
+            new Vector3Int(fromWhichCell.x, fromWhichCell.y, 0)
         );
         var toWhere = _grid.GetCellCenterWorld(
             new Vector3Int(toWhichCell.x, toWhichCell.y, 0)
         );
         var castResults = Physics2D.BoxCastAll(
             new Vector2(fromWhere.x, fromWhere.y),
-            new Vector2(_grid.cellSize.x, _grid.cellSize.y),
+            new Vector2(_grid.cellSize.x*0.9f, _grid.cellSize.y*0.9f),
             0.0f,
             direction.ToVector2(),
             Vector3.Distance(fromWhere, toWhere)
@@ -117,8 +117,19 @@ public class GridConstrainedMotion2D : MonoBehaviour
         return true;
     }
 
+    public bool CanMove(Direction2D direction) {
+        return CanMoveFrom(_targetGridPosition, direction);
+    }
+
     public bool Moving() {
         return _targetGridPosition != _gridPosition;
+    }
+
+    public void Teleport(Vector2Int where) {
+        _gridPosition = where;
+        _targetGridPosition = where;
+        SnapToGrid();
+        _moveCountdown = -1;
     }
 
     private void UpdateMove() {
@@ -143,4 +154,6 @@ public class GridConstrainedMotion2D : MonoBehaviour
             _moveCountdown--;
         }
     }
+
+    public Vector2Int GridPosition {get => _targetGridPosition;}
 }

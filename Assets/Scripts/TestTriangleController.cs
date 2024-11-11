@@ -43,9 +43,7 @@ public class TestTriangleController : MonoBehaviour
                     direction = Direction2D.Right;
                 }
             }
-            if (!_mover.TryMove(direction) && !_mover.Moving()) {
-                Debug.Log("can't move that way");
-            }
+            _mover.TryMove(direction);
         }
     }
 

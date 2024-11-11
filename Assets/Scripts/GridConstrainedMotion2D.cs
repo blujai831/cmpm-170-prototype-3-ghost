@@ -7,10 +7,12 @@ public class GridConstrainedMotion2D : MonoBehaviour
 {
     [SerializeField] private GameObject _gridObject;
     [SerializeField] private int _ticksPerMove;
+    [SerializeField] private GameObject _scannerObject;
 
     [SerializeField] public Direction2D FacingDirection = Direction2D.Down;
 
     private Grid _grid;
+    private GridConstrainedAreaScanner2D _scanner;
     private Vector2Int _gridPosition;
     private Vector2Int _targetGridPosition;
     private int _moveCountdown;
@@ -24,6 +26,13 @@ public class GridConstrainedMotion2D : MonoBehaviour
     void Start()
     {
         _grid = _gridObject.GetComponent<Grid>();
+        if (_scannerObject == null) {
+            _scanner = null;
+        } else {
+            _scanner = _scannerObject.GetComponent<
+                GridConstrainedAreaScanner2D
+            >();
+        }
         _gridPosition = GetRealGridPosition();
         _targetGridPosition = _gridPosition;
         SnapToGrid();
@@ -43,19 +52,11 @@ public class GridConstrainedMotion2D : MonoBehaviour
     }
 
     public Vector2Int GetRealGridPosition() {
-        var realGridPosition3D = _grid.WorldToCell(transform.position);
-        return new Vector2Int(realGridPosition3D.x, realGridPosition3D.y);
+        return GridConstrainedLogic2D.GetRealGridPosition(_grid, gameObject);
     }
 
     public void SnapToGrid() {
-        var gridCellCenter = _grid.GetCellCenterWorld(
-            new Vector3Int(_gridPosition.x, _gridPosition.y, 0)
-        );
-        transform.position = new Vector3(
-            gridCellCenter.x,
-            gridCellCenter.y,
-            transform.position.z
-        );
+        GridConstrainedLogic2D.SnapToGrid(_grid, gameObject, _gridPosition);
     }
 
     public void Move(Direction2D direction) {
@@ -95,27 +96,12 @@ public class GridConstrainedMotion2D : MonoBehaviour
     }
 
     public bool CanMoveFrom(Vector2Int fromWhichCell, Direction2D direction) {
-        var toWhichCell = fromWhichCell + direction.ToVector2Int();
-        var fromWhere = _grid.GetCellCenterWorld(
-            new Vector3Int(fromWhichCell.x, fromWhichCell.y, 0)
+        return GridConstrainedLogic2D.CanMove(
+            _grid,
+            fromWhichCell,
+            direction,
+            _scanner
         );
-        var toWhere = _grid.GetCellCenterWorld(
-            new Vector3Int(toWhichCell.x, toWhichCell.y, 0)
-        );
-        var castResults = Physics2D.BoxCastAll(
-            new Vector2(fromWhere.x, fromWhere.y),
-            new Vector2(_grid.cellSize.x*0.9f, _grid.cellSize.y*0.9f),
-            0.0f,
-            direction.ToVector2(),
-            Vector3.Distance(fromWhere, toWhere),
-            LayerMask.GetMask("Map")
-        );
-        foreach (var castResult in castResults) {
-            if (!castResult.collider.isTrigger) {
-                return false;
-            }
-        }
-        return true;
     }
 
     public bool CanMove(Direction2D direction) {

@@ -22,6 +22,13 @@ public class GridConstrainedMotion2D : MonoBehaviour
 
     public bool DirectionFix;
 
+    public void TransferSceneContext(
+        GridConstrainedMotion2D target
+    ) {
+        target._gridObject = _gridObject;
+        target._scannerObject = _scannerObject;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -145,4 +152,6 @@ public class GridConstrainedMotion2D : MonoBehaviour
     public Vector2Int GridPosition {get => _targetGridPosition;}
 
     public Grid Grid {get => _grid;}
+
+    public GridConstrainedAreaScanner2D Scanner {get => _scanner;}
 }

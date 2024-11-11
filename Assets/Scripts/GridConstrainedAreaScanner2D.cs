@@ -8,6 +8,7 @@ public class GridConstrainedAreaScanner2D : MonoBehaviour
     [SerializeField] private GameObject _gridObject;
     private Grid _grid;
     private HashSet<Vector2Int> _occupiable;
+    private List<Vector2Int> _occupiableAsList;
     private bool _initialized = false;
     public Grid Grid {get => _grid;}
     public bool Initialized {get => _initialized;}
@@ -17,6 +18,7 @@ public class GridConstrainedAreaScanner2D : MonoBehaviour
     {
         _grid = _gridObject.GetComponent<Grid>();
         _occupiable = new HashSet<Vector2Int>();
+        _occupiableAsList = new List<Vector2Int>();
     }
 
     void FixedUpdate() {
@@ -43,6 +45,7 @@ public class GridConstrainedAreaScanner2D : MonoBehaviour
             );
         } else {
             _occupiable.Add(start);
+            _occupiableAsList.Add(start);
             while (openSet.Count > 0) {
                 var current = openSet.Min;
                 openSet.Remove(current);
@@ -58,8 +61,9 @@ public class GridConstrainedAreaScanner2D : MonoBehaviour
                         if (GridConstrainedLogic2D.Occupiable(
                             _grid, neighbor
                         )) {
-                            _occupiable.Add(neighbor);
                             openSet.Add(neighbor);
+                            _occupiable.Add(neighbor);
+                            _occupiableAsList.Add(neighbor);
                         } else {
                             notOccupiable.Add(neighbor);
                         }
@@ -67,5 +71,11 @@ public class GridConstrainedAreaScanner2D : MonoBehaviour
                 }
             }
         }
+    }
+
+    public Vector2Int GetRandomOccupiableCell() {
+        return _occupiableAsList[
+            (int) (UnityEngine.Random.value*_occupiableAsList.Count)
+        ];
     }
 }

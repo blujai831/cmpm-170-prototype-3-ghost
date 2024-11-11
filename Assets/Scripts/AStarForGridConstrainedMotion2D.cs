@@ -72,12 +72,7 @@ public class AStarForGridConstrainedMotion2D : MonoBehaviour
         var openSet = new SortedSet<Vector2Int>(new PathNodeComparer(fScore));
         openSet.Add(start);
         while (openSet.Count > 0) {
-            Vector2Int current = Vector2Int.zero;
-                // Will be overwritten but compiler doesn't think so
-            foreach (var first in openSet) {
-                current = first;
-                break;
-            }
+            var current = openSet.Min;
             openSet.Remove(current);
             if (current == goal) {
                 return ReconstructPath(cameFrom, current);

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,6 @@ using UnityEngine;
 
 public class AStarForGridConstrainedMotion2D : MonoBehaviour
 {
-    [SerializeField] private bool _debugMode;
-    [SerializeField] private GameObject _debugMarker;
-    private int _debugFreezeCountdown;
-    private List<GameObject> _debugMarkersSpawned;
-
     private class PathNodeComparer : IComparer<Vector2Int> {
         private Dictionary<Vector2Int, float> _fScore;
         public PathNodeComparer(Dictionary<Vector2Int, float> fScore) {
@@ -45,20 +41,9 @@ public class AStarForGridConstrainedMotion2D : MonoBehaviour
     void Start() {
         _mover = GetComponent<GridConstrainedMotion2D>();
         _assignedPath = new List<Direction2D>();
-        _debugMarkersSpawned = new List<GameObject>();
-        _debugFreezeCountdown = 0;
     }
 
     void FixedUpdate() {
-        if (_debugFreezeCountdown >= 0) {
-            _debugFreezeCountdown--;
-            return;
-        } else {
-            foreach (var marker in _debugMarkersSpawned) {
-                Destroy(marker);
-            }
-            _debugMarkersSpawned.Clear();
-        }
         if (!_mover.Moving() && _assignedPath.Count > 0) {
             if (_mover.TryMove(_assignedPath[0])) {
                 _assignedPath.RemoveAt(0);
@@ -85,10 +70,11 @@ public class AStarForGridConstrainedMotion2D : MonoBehaviour
         gScore[start] = 0.0f;
         var fScore = new Dictionary<Vector2Int, float>();
         fScore[start] = Vector2Int.Distance(start, goal);
-        var openSet = new SortedSet<Vector2Int>(new PathNodeComparer(fScore));
+        var openSet = new List<Vector2Int>();
+        var comparer = new PathNodeComparer(fScore);
         openSet.Add(start);
         while (openSet.Count > 0) {
-            var current = openSet.Min;
+            var current = openSet[0];
             openSet.Remove(current);
             if (current == goal) {
                 return ReconstructPath(cameFrom, current);
@@ -98,38 +84,31 @@ public class AStarForGridConstrainedMotion2D : MonoBehaviour
                 System.Enum.GetValues(typeof(Direction2D))
             ) {
                 if (_mover.CanMoveFrom(current, direction)) {
-                    var tentativeGScore = gScore[current] + 1;
                     var neighbor = current + direction.ToVector2Int();
+                    if (
+                        current != start &&
+                        neighbor == cameFrom[current]
+                    ) {
+                        continue;
+                    }
+                    var tentativeGScore = gScore[current] + 1;
                     if (
                         !gScore.ContainsKey(neighbor) ||
                         tentativeGScore < gScore[neighbor]
                     ) {
                         cameFrom[neighbor] = current;
                         gScore[neighbor] = tentativeGScore;
-                        openSet.Remove(neighbor);
                         fScore[neighbor] =
                             tentativeGScore +
                             Vector2Int.Distance(neighbor, goal);
+                        openSet.Remove(neighbor);
                         openSet.Add(neighbor);
+                        openSet.Sort(comparer);
                     }
                 }
             }
         }
-        foreach (var suboptimalCandidate in fScore) {
-            var vec = suboptimalCandidate.Key;
-            openSet.Add(vec);
-            if (_debugMode) {
-                _debugMarkersSpawned.Add(
-                    Instantiate(_debugMarker, _mover.Grid.GetCellCenterWorld(
-                        new Vector3Int(vec.x, vec.y, 0)
-                    ), Quaternion.identity)
-                );
-            }
-        }
-        if (_debugMode) {
-            _debugFreezeCountdown = 600;
-        }
-        return ReconstructPath(cameFrom, openSet.Min);
+        return null;
     }
 
     private List<Direction2D> VecPathToDirPath(List<Vector2Int> path) {
@@ -159,9 +138,5 @@ public class AStarForGridConstrainedMotion2D : MonoBehaviour
 
     public bool AnyPathAssigned() {
         return _assignedPath.Count > 0;
-    }
-
-    public bool FrozenForDebug() {
-        return _debugFreezeCountdown > 0;
     }
 }

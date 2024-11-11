@@ -23,7 +23,7 @@ public class TestFollowerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!_mover.Moving() && !_aStar.FrozenForDebug()) {
+        if (!_mover.Moving()) {
             if ((
                 !_everSetTargetLastKnownLocation ||
                 _targetLastKnownLocation != _targetMover.GridPosition

@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class AStarForGridConstrainedMotion2D : MonoBehaviour
 {
+    [SerializeField] private bool _debugMode;
+    [SerializeField] private GameObject _debugMarker;
+    private int _debugFreezeCountdown;
+    private List<GameObject> _debugMarkersSpawned;
+
     private class PathNodeComparer : IComparer<Vector2Int> {
         private Dictionary<Vector2Int, float> _fScore;
         public PathNodeComparer(Dictionary<Vector2Int, float> fScore) {
@@ -40,9 +45,19 @@ public class AStarForGridConstrainedMotion2D : MonoBehaviour
     void Start() {
         _mover = GetComponent<GridConstrainedMotion2D>();
         _assignedPath = new List<Direction2D>();
+        _debugMarkersSpawned = new List<GameObject>();
+        _debugFreezeCountdown = 0;
     }
 
     void FixedUpdate() {
+        if (_debugFreezeCountdown >= 0) {
+            _debugFreezeCountdown--;
+            return;
+        } else {
+            foreach (var marker in _debugMarkersSpawned) {
+                Destroy(marker);
+            }
+        }
         if (!_mover.Moving() && _assignedPath.Count > 0) {
             if (_mover.TryMove(_assignedPath[0])) {
                 _assignedPath.RemoveAt(0);
@@ -100,7 +115,18 @@ public class AStarForGridConstrainedMotion2D : MonoBehaviour
             }
         }
         foreach (var suboptimalCandidate in fScore) {
-            openSet.Add(suboptimalCandidate.Key);
+            var vec = suboptimalCandidate.Key;
+            openSet.Add(vec);
+            if (_debugMode) {
+                _debugMarkersSpawned.Add(
+                    Instantiate(_debugMarker, _mover.Grid.GetCellCenterWorld(
+                        new Vector3Int(vec.x, vec.y, 0)
+                    ), Quaternion.identity)
+                );
+            }
+        }
+        if (_debugMode) {
+            _debugFreezeCountdown = 600;
         }
         return ReconstructPath(cameFrom, openSet.Min);
     }
@@ -132,5 +158,9 @@ public class AStarForGridConstrainedMotion2D : MonoBehaviour
 
     public bool AnyPathAssigned() {
         return _assignedPath.Count > 0;
+    }
+
+    public bool FrozenForDebug() {
+        return _debugFreezeCountdown > 0;
     }
 }

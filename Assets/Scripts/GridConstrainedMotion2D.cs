@@ -156,4 +156,6 @@ public class GridConstrainedMotion2D : MonoBehaviour
     }
 
     public Vector2Int GridPosition {get => _targetGridPosition;}
+
+    public Grid Grid {get => _grid;}
 }

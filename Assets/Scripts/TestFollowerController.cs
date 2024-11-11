@@ -33,11 +33,13 @@ public class TestFollowerController : MonoBehaviour
                 _aStar.MoveToward(_targetMover.GridPosition);
             }
             if (!_aStar.AnyPathAssigned()) {
-                _mover.TryMove((Direction2D) (
+                if (_mover.TryMove((Direction2D) (
                     System.Enum.GetValues(typeof(Direction2D)).GetValue(
                         (int) (Random.value*4.0f)
                     )
-                ));
+                ))) {
+                    _aStar.MoveToward(_targetMover.GridPosition);
+                }
             }
         }
     }

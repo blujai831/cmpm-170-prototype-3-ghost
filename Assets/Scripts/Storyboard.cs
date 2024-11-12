@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public static class Storyboard
 {
     public static void Win() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadSceneAsync("Win");
     }
     public static void Lose() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
     }
 }

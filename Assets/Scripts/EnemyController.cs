@@ -10,6 +10,8 @@ public class EnemyController : MonoBehaviour
 {
     private static int _s_count = 0;
 
+    public static int Count {get => _s_count;}
+
     [SerializeField] private GameObject _playerCharacter;
     [SerializeField] private int _pathRecalcInterval;
 

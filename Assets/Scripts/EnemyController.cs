@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(GridConstrainedMotion2D))]
 [RequireComponent(typeof(AStarForGridConstrainedMotion2D))]
@@ -26,6 +27,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
         _s_count++;
         _mover = GetComponent<GridConstrainedMotion2D>();
         _aStar = GetComponent<AStarForGridConstrainedMotion2D>();
@@ -111,5 +113,9 @@ public class EnemyController : MonoBehaviour
         if (_s_count <= 0) {
             Storyboard.Win();
         }
+    }
+
+    private void OnSceneUnloaded(Scene _dontCare) {
+        _s_count = 0;
     }
 }

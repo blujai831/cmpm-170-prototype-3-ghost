@@ -5,6 +5,7 @@ using UnityEngine;
 
 // Adapted from Wikipedia pseudocode
 
+[RequireComponent(typeof(GridConstrainedMotion2D))]
 public class AStarForGridConstrainedMotion2D : MonoBehaviour
 {
     private class PathNodeComparer : IComparer<Vector2Int> {
@@ -138,5 +139,9 @@ public class AStarForGridConstrainedMotion2D : MonoBehaviour
 
     public bool AnyPathAssigned() {
         return _assignedPath.Count > 0;
+    }
+
+    public void CancelPath() {
+        _assignedPath.Clear();
     }
 }

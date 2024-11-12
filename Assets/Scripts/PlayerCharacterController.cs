@@ -5,6 +5,8 @@ using System.Diagnostics.Contracts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(GridConstrainedMotion2D))]
+[RequireComponent(typeof(FramewiseAnimator))]
 public class PlayerCharacterController : MonoBehaviour
 {
     [SerializeField] private GameObject _flashlight;

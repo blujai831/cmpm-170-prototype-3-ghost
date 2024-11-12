@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEngine;
 
 public class GridConstrainedAreaScanner2D : MonoBehaviour
@@ -9,9 +10,13 @@ public class GridConstrainedAreaScanner2D : MonoBehaviour
     private Grid _grid;
     private HashSet<Vector2Int> _occupiable;
     private List<Vector2Int> _occupiableAsList;
+    private ReadOnlyCollection<Vector2Int> _occupiableAsReadOnlyList;
     private bool _initialized = false;
     public Grid Grid {get => _grid;}
     public bool Initialized {get => _initialized;}
+    public ReadOnlyCollection<Vector2Int> OccupiableCells {
+        get => _occupiableAsReadOnlyList;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +24,8 @@ public class GridConstrainedAreaScanner2D : MonoBehaviour
         _grid = _gridObject.GetComponent<Grid>();
         _occupiable = new HashSet<Vector2Int>();
         _occupiableAsList = new List<Vector2Int>();
+        _occupiableAsReadOnlyList =
+            new ReadOnlyCollection<Vector2Int>(_occupiableAsList);
     }
 
     void FixedUpdate() {

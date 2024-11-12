@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GridConstrainedMotion2D))]
 public class PowerupSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject _powerupToSpawn;

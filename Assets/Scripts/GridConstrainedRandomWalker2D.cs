@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AStarForGridConstrainedMotion2D))]
 public class GridConstrainedRandomWalker2D : MonoBehaviour
 {
     private GridConstrainedAreaScanner2D _scanner;

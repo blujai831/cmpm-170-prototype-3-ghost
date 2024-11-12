@@ -8,6 +8,7 @@ using UnityEngine;
  * Surely I must be missing something here.
  * But, oh well, if it works it works. */
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class FramewiseAnimator : MonoBehaviour
 {
     [System.Serializable]

@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CircleCollider2D))]
 public class EMFDetectorController : MonoBehaviour
 {
+    private CircleCollider2D _collider;
     private List<GameObject> _enemiesInRange;
     private float _shortestDistance;
 
     void Start() {
+        _collider = GetComponent<CircleCollider2D>();
         _enemiesInRange = new List<GameObject>();
         _shortestDistance = Single.PositiveInfinity;
     }
@@ -44,4 +47,10 @@ public class EMFDetectorController : MonoBehaviour
 
     public int Count {get => _enemiesInRange.Count;}
     public float ShortestDistance {get => _shortestDistance;}
+    public float Radius {get => _collider.radius;}
+    public float DangerLevel {
+        get => (Count > 0 && ShortestDistance < Radius) ?
+            (Radius - ShortestDistance)/Radius :
+            0.0f;
+    }
 }

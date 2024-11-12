@@ -34,6 +34,7 @@ public class EnemyLifeCounterController : MonoBehaviour
             icon.transform.SetParent(_firstIcon.transform.parent);
             icon.transform.position = _firstIcon.transform.position;
             icon.transform.position += i*spriteRenderer.size.x*Vector3.right;
+            icon.transform.localScale = _firstIcon.transform.localScale;
             _icons.Add(icon);
         }
         _initialized = true;

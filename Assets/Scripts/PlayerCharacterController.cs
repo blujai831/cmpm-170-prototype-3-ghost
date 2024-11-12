@@ -11,6 +11,7 @@ public class PlayerCharacterController : MonoBehaviour
 {
     [SerializeField] private GameObject _flashlight;
     [SerializeField] private float _flashlightTurnSpeed;
+    [SerializeField] private int _expectedPowerupDuration;
 
     private GridConstrainedMotion2D _mover;
     private FramewiseAnimator _animator;
@@ -103,5 +104,9 @@ public class PlayerCharacterController : MonoBehaviour
 
     public void GivePowerup(int duration) {
         _powerupTimer += duration;
+    }
+
+    public float PowerupAmountRemaining {
+        get => _powerupTimer*1.0f/_expectedPowerupDuration;
     }
 }

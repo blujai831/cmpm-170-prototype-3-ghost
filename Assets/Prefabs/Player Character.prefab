@@ -582,3 +582,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _flashlight: {fileID: 832817054929074794}
   _flashlightTurnSpeed: 10
+  _expectedPowerupDuration: 600

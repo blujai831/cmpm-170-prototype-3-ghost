@@ -49,6 +49,7 @@ public class EnemyController : MonoBehaviour
         if (_pcPoweredUpLastChecked != pcPoweredUp) {
             _pcPoweredUpLastChecked = pcPoweredUp;
             _aStar.CancelPath();
+            _pathRecalcCountdown = _pathRecalcInterval;
         }
         if (!_aStar.AnyPathAssigned()) {
             if (pcPoweredUp) {
